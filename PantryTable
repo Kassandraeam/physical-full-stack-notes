@@ -1,0 +1,32 @@
+// PantryItem.js
+import PantryItem from '../PantryItem/PantryItem';
+
+function PantryTable({ inventoryList, changeQuantity }) {
+
+  return (    
+      <section>
+        <h2>Pantry Contents</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Food Item</th>
+              <th>Quantity</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+          <tbody>
+            {inventoryList.map((item) => (
+              <PantryItem
+                key={item.id}
+                item={item}
+                changeQuantity={changeQuantity}
+              />
+            ))}
+          </tbody>
+        </table>
+      </section>
+    
+  );
+}
+
+export default PantryTable;
